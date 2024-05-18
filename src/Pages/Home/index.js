@@ -5,17 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './styles'
 import BleManager from 'react-native-ble-manager';
 
-BleManager.start({ showAlert: false })
-  .then(() => {
-    console.log('Ble Module initialized');
-  })
-  .catch((error) => {
-    console.error('Ble Module initialization error', error);
-  });
-
-
-export default function Home() {
-
+const Home = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -28,20 +18,20 @@ export default function Home() {
       });
 
     return () => {
-      manager.destroy(); // Limpa o manager quando o componente for desmontado
+      BleManager.destroy(); // Limpa o manager quando o componente for desmontado
     };
   }, []);
 
   const connectToDevice = () => {
-    manager.startDeviceScan(null, null, (error, device) => {
+    BleManager.startDeviceScan(null, null, (error, device) => {
       if (error) {
         console.error(error);
         return;
       }
-  
+
       if (device.name === 'HC-06') {
-        manager.stopDeviceScan();
-        manager.connectToDevice(device.id)
+        BleManager.stopDeviceScan();
+        BleManager.connectToDevice(device.id)
           .then((device) => {
             console.log('Conectado ao dispositivo:', device.id);
             // Agora você pode enviar e receber dados para o dispositivo
@@ -51,25 +41,6 @@ export default function Home() {
           });
       }
     });
-  };
-
-  const sendDataToArduino = (message) => {
-    if (manager && manager.isDeviceConnected('HC-06')) {
-      manager.writeCharacteristicWithoutResponseForDevice(
-        'HC-06',
-        '0000ffe1-0000-1000-8000-00805f9b34fb', // UUID do serviço do módulo Bluetooth do HC-06
-        '0000ffe1-0000-1000-8000-00805f9b34fb', // UUID da característica do módulo Bluetooth do HC-06
-        message
-      )
-      .then(() => {
-        console.log('Dados enviados com sucesso:', message);
-      })
-      .catch((error) => {
-        console.error('Erro ao enviar dados:', error);
-      });
-    } else {
-      console.error('Dispositivo não está conectado.');
-    }
   };
 
   return (
@@ -100,4 +71,6 @@ export default function Home() {
       </View>
     </View>
   );
-}
+};
+
+export default Home;

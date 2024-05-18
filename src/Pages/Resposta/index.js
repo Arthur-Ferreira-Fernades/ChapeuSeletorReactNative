@@ -36,11 +36,6 @@ export default function Resposta({route}) {
             textoRespota = "t";
         }
     }
-
-    useEffect(() => {
-        sendDataToArduino(textoRespota); // Envia a resposta assim que a página for carregada
-      }, []); // O array vazio como segundo argumento faz com que o useEffect só seja executado uma vez, quando a página é carregada
-    
       return (
         <View style={styles.body}>
           <View style={styles.header}>

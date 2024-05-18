@@ -16,14 +16,6 @@ import DesempataMarkTuri from './src/Pages/DesempataMarkTuri';
 import DesempataRhTuri from './src/Pages/DesempataRhTuri';
 import BleManager from 'react-native-ble-manager';
 
-BleManager.start({ showAlert: false })
-  .then(() => {
-    console.log('Ble Module initialized');
-  })
-  .catch((error) => {
-    console.error('Ble Module initialization error', error);
-  });
-
 const Stack = createNativeStackNavigator();
 
 export default function app() {
