@@ -42,9 +42,9 @@ export default StyleSheet.create({
         },
       
         btn: {
-          flex: 1,
           marginTop: 20,
           width: 150,
+          height: 50,
           padding: 15,
           backgroundColor: '#0C3259',
           borderRadius: 15,

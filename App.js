@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Alert, Button} from 'react-native';
 
 import Home from './src/Pages/Home';
 import PerguntasArea from './src/Pages/PerguntasArea';
@@ -14,7 +13,6 @@ import DesempataLogEle from './src/Pages/DesempataLogEle';
 import DesempataMarkRh from './src/Pages/DesempataMarkRh';
 import DesempataMarkTuri from './src/Pages/DesempataMarkTuri';
 import DesempataRhTuri from './src/Pages/DesempataRhTuri';
-import BleManager from 'react-native-ble-manager';
 
 const Stack = createNativeStackNavigator();
 
