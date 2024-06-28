@@ -4,22 +4,28 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "@config-plugins/react-native-ble-plx": "^7.0.0",
     "@expo/metro-runtime": "~3.1.3",
     "@react-native-community/netinfo": "^11.3.2",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@react-navigation/stack": "^6.3.29",
+    "@types/react": "~18.2.79",
     "android": "^0.0.8",
+    "eas-cli": "^10.0.3",
     "expo": "^51.0.14",
+    "expo-dev-client": "~4.0.18",
+    "expo-device": "~6.0.2",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-base64": "^0.2.1",
     "react-native-ble-manager": "^11.5.3",
     "react-native-ble-plx": "^3.2.0",
     "react-native-bluetooth-serial-next": "^1.2.3",
@@ -28,6 +34,7 @@
     "react-native-screens": "^3.31.1",
     "react-native-web": "~0.19.6",
     "react-navigation": "^5.0.0",
+    "undefined": "@shopify/react-native/skia",
     "uuid": "^10.0.0"
   },
   "devDependencies": {

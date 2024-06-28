@@ -3,20 +3,27 @@
     "version": ">= 9.0.6"
   },
   "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
     "preview": {
+      "distribution": "internal"
+    },
+    "preview2": {
       "android": {
         "buildType": "apk"
       }
     },
-    "preview2": {
+    "preview3": {
       "android": {
         "gradleCommand": ":app:assembleRelease"
       }
     },
-    "preview3": {
+    "preview4": {
       "developmentClient": true
     },
-    "preview4": {
+    "preview5": {
       "distribution": "internal"
     },
     "production": {}
